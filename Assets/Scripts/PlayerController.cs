@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   private Rigidbody rb;
-  public float speed = 0.05f;
+  public float speed = 0.1f;
 
   void Start() {
   }
@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
   }
 
   public void PlayerDead() {
-    Debug.Log("Player dead");
     Destroy(gameObject);
   }
 }

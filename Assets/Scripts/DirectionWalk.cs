@@ -13,10 +13,12 @@ public class DirectionWalk : MonoBehaviour
   }
 
   void FixedUpdate() {
-    Vector3 toTarget = _target.position - _pelvisTransform.position;
-    Vector3 toTargetXZ = new Vector3(toTarget.x, 0f, toTarget.z);
-    Quaternion rotation = Quaternion.LookRotation(toTargetXZ);
+    if (_target) {
+      Vector3 toTarget = _target.position - _pelvisTransform.position;
+      Vector3 toTargetXZ = new Vector3(toTarget.x, 0f, toTarget.z);
+      Quaternion rotation = Quaternion.LookRotation(toTargetXZ);
 
-    _joint.targetRotation = Quaternion.Inverse(rotation);
+      _joint.targetRotation = Quaternion.Inverse(rotation);
+    }
   }
 }

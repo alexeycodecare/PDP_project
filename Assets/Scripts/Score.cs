@@ -8,13 +8,15 @@ public class Score : MonoBehaviour
   int score = 0;
   Text scoreText;
 
+  [SerializeField] private FloatSO scoreSO;
+
   void Start() {
     scoreText = GetComponent<Text>();
-    scoreText.text = score.ToString();
+    scoreText.text = scoreSO.Value.ToString();
   }
 
   public void ScoreHit(int scorePerHit) {
-    score = score + scorePerHit;
-    scoreText.text = score.ToString();
+    scoreSO.Value += scorePerHit;
+    scoreText.text = scoreSO.Value.ToString();
   }
 }
