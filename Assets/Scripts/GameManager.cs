@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static JS_Manager.JSManager;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
   }
 
   public void Restart() {
+    JS_PlayerRestart();
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 

@@ -10,11 +10,11 @@ public class PhyscalBodyPart : MonoBehaviour
   private Quaternion _startRotation;
 
   void Start() {
-      _joint = GetComponent<ConfigurableJoint>();
-      _startRotation = transform.localRotation;
+    _joint = GetComponent<ConfigurableJoint>();
+    _startRotation = transform.localRotation;
   }
 
-  void FixedUpdate(){
-      _joint.targetRotation = Quaternion.Inverse(_target.localRotation) * _startRotation;
+  void FixedUpdate() {
+    _joint.targetRotation = Quaternion.Inverse(_target.localRotation) * _startRotation;
   }
 }

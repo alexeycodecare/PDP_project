@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static JS_Manager.JSManager;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,5 +38,6 @@ public class PlayerController : MonoBehaviour
 
   public void PlayerDead() {
     Destroy(gameObject);
+    JS_PlayerDead();
   }
 }
